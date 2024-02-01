@@ -30,11 +30,11 @@ export default function ProductForm({ submit, product = {} }) {
         setDescriptionError(true);
         reject("Description is required.");
       }
-      if (!price ||isNaN(price)) {
+      if (!price ||isNaN(price) || price <= 0) {
+       
         setPriceError(true);
         reject("Price is required.");
       }
-
       if (!productName) {
         setProductNameError(true);
         reject("Product name is required.");
@@ -57,7 +57,7 @@ export default function ProductForm({ submit, product = {} }) {
           let item = {
             thumbnail: thumbnailLink,
             product_name: productName,
-            price: price,
+            price: Number(price),
             slug: product.slug ?? generateSlug(productName),
             category: category,
           };

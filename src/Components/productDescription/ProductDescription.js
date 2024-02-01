@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext,useEffect, useState } from "react";
 import { useLastIndexFromUrl } from "../../helpers/useLastIndexFromUrl";
 import { ProductsContext } from "../../context/ProductsContext";
 import Button from "../global/Button";
@@ -9,12 +9,12 @@ import { CartContext } from "../../context/CartContext";
 import Description from "./Description";
 export default function ProductDescription() {
   const [product, setProduct] = useState(null);
-  const {cartDispatch} = useContext(CartContext)
+  const { cartDispatch } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   const { searchProduct } = useContext(ProductsContext);
   const slug = useLastIndexFromUrl();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         if (slug) {
@@ -25,17 +25,18 @@ export default function ProductDescription() {
     };
     fetchData();
   }, [slug, searchProduct]);
-  
+
   const AddToCart = () => {
-      let item = {
-        thumbnail : product.thumbnail,
-        product_name : product.product_name,
-        slug: product.slug,
-        qty: quantity,
-        price: product.price
-      }
-      cartDispatch({type:'ADD_TO_CART',item : item})
-  }
+    let item = {
+      thumbnail: product.thumbnail,
+      product_name: product.product_name,
+      slug: product.slug,
+      qty: quantity,
+      price: product.price,
+    };
+    cartDispatch({ type: "ADD_TO_CART", item: item });
+    alert("Added to cart successfully!");
+  };
 
   if (product) {
     return (
@@ -60,8 +61,13 @@ export default function ProductDescription() {
                   setInputValue={setQuantity}
                 />
               </div>
-              <Button onClick={AddToCart} hover={true} type={"filled"} title={"Add to Bag"} />
-              <Description description={product.description}/>
+              <Button
+                onClick={AddToCart}
+                hover={true}
+                type={"filled"}
+                title={"Add to Bag"}
+              />
+              <Description description={product.description} />
             </div>
           </div>
         </div>

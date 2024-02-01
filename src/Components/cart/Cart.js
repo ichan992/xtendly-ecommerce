@@ -28,7 +28,7 @@ export default function Cart() {
     <div className="flex 2xl:flex-row md:flex-row flex-col justify-start 2xl:mx-64 xl:mx-56 md:mx-10 mx-0 my-10 space-x-10  ">
       <div className="2xl:w-[50%] xl:w-[50%] md:w-[50%] w-full border-[0.5px] p-10 ">
         <div className="top-0 sticky ">
-          { cartState.length >1 ? cartState.map((item) => (
+          { cartState.length >=1 ? cartState.map((item) => (
             <>
               <div key={item.slug} className=" flex row  w-full  mb-5 ">
                 <div className="relative w-64 h-full ">
@@ -76,7 +76,7 @@ export default function Cart() {
           )) : <p>No Items</p>}
         </div>
       </div>
-      {cartState.length >1  &&
+      {cartState.length >= 1  &&
         <div className="flex flex-col space-x-2 h-full bg-white border-[0.5px] overflow-hidden w-62 p-10 space-y-10 ">
         <div className="flex flex-row  justify-between space-x-10 font-semibold">
           <p className="text-xl">Total</p>

@@ -22,10 +22,9 @@ export default function EditProduct() {
 
   const updateSubmit = (product) => {
     updateProduct(product);
-    navigate('/product-management')
-  
+    navigate("/product-management");
   };
-  
+
   if (product) {
     return <ProductForm submit={updateSubmit} product={product} />;
   }

@@ -16,6 +16,7 @@ export default function CartProvider({children}) {
           };
           return newState;
         } else {
+
           return [...state, action.item];
         }
       case "REMOVE_FROM_CART":
