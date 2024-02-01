@@ -1,6 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-export default function Description() {
+export default function Description({description}) {
   const [showFilter, setShowFilters] = useState(true);
   return (
     <div className="flex flex-col justify-center items-center">
@@ -18,23 +18,7 @@ export default function Description() {
         </div>
         {showFilter && (
           <div className="p-5 text-justify">
-            The Nike Sportswear Premium Essentials T-Shirt has a loose fit for a
-            carefree, comfortable look. Its heavyweight organic cotton fabric
-            feels thick and soft. This product is made from at least 75% organic
-            cotton fibres. The Nike Sportswear Premium Essentials T-Shirt has a
-            loose fit for a carefree, comfortable look. Its heavyweight organic
-            cotton fabric feels thick and soft. This product is made from at
-            least 75% organic cotton fibres. The Nike Sportswear Premium
-            Essentials T-Shirt has a loose fit for a carefree, comfortable look.
-            Its heavyweight organic cotton fabric feels thick and soft. This
-            product is made from at least 75% organic cotton fibres. The Nike
-            Sportswear Premium Essentials T-Shirt has a loose fit for a
-            carefree, comfortable look. Its heavyweight organic cotton fabric
-            feels thick and soft. This product is made from at least 75% organic
-            cotton fibres. The Nike Sportswear Premium Essentials T-Shirt has a
-            loose fit for a carefree, comfortable look. Its heavyweight organic
-            cotton fabric feels thick and soft. This product is made from at
-            least 75% organic cotton fibres.
+           {description}
           </div>
         )}
       </div>
