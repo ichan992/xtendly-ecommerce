@@ -76,7 +76,7 @@ export default function ProductForm({ submit, product = {} }) {
       });
   };
   return (
-    <div className="flex flex-row space-x-10 m-10">
+    <div className="flex 2xl:flex-row xl:flex-row md:flex-col 2xl:space-y-0  2xl:space-x-10 xl:space-x-10 md:space-x-0 m-10 flex-col space-y-5 ">
       <div className="w-full max-w-xs justify-center items-center ">
         <div className="mb-4">
           <label

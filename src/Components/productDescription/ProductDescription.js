@@ -61,7 +61,7 @@ export default function ProductDescription() {
                 />
               </div>
               <Button onClick={AddToCart} hover={true} type={"filled"} title={"Add to Bag"} />
-              <Description />
+              <Description description={product.description}/>
             </div>
           </div>
         </div>
