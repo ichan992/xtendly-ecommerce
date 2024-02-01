@@ -20,7 +20,7 @@ export default function CartProvider({children}) {
           return [...state, action.item];
         }
       case "REMOVE_FROM_CART":
-        return state.filter((item) => item.size !== action.value.size)
+        return state.filter((item) => item.slug !== action.value.slug)
       case "UPDATE_CART" :
         const cartItemIndex = state.findIndex(
           (cartItem) => cartItem.slug === action.item.slug
